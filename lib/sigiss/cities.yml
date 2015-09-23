@@ -1,5 +1,13 @@
 test:
+  bauru: https://testebauru.sigiss.com.br/testebauru/ws/sigiss_ws.php
+  botucatu: https://testebotucatu.sigiss.com.br/testebotucatu/ws/sigiss_ws.php?wsdl
   marilia: https://testemarilia.sigiss.com.br/testemarilia/ws/sigiss_ws.php?wsdl
+  londrina: http://testeiss.londrina.pr.gov.br/ws/v1_03/sigiss_ws.php?wsdl
+  riogrande: https://testeriogrande.sigiss.com.br/testeriogrande/ws/sigiss_ws.php?wsdl
 
 production:
+  bauru: https://bauru.sigiss.com.br/bauru/ws/sigiss_ws.php?wsdl
+  botucatu: https://botucatu.sigiss.com.br/botucatu/ws/sigiss_ws.php?wsdl
+  londrina: https://iss.londrina.pr.gov.br/ws/v1_03/sigiss_ws.php?wsdl
   marilia: https://marilia.sigiss.com.br/marilia/ws/sigiss_ws.php?wsdl
+  riogrande: https://riogrande.sigiss.com.br/riogrande/ws/sigiss_ws.php?wsdl
