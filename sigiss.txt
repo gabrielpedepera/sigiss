@@ -1,0 +1,14 @@
+SIGISS
+
+Ruby gem para integração com o sistema SIGISS para emissão de Notas Fiscais Eletrônicas.
+
+gateway = Sigiss::Gateway.new(:marilia, :test|:production)
+
+provider = Sigiss::Provider.new(params) # Prestador
+
+taker = Sigiss::Taker.new(params) # Tomador
+
+invoice = Sigiss::Invoice.new(gateway: gateway, provider: provider, taker: taker)
+
+invoice.create(params)
+
