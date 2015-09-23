@@ -1,0 +1,5 @@
+test:
+  marilia: https://testemarilia.sigiss.com.br/testemarilia/ws/sigiss_ws.php?wsdl
+
+production:
+  marilia: https://marilia.sigiss.com.br/marilia/ws/sigiss_ws.php?wsdl

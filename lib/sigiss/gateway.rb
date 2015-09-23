@@ -1,11 +1,16 @@
+require 'yaml'
 module Sigiss
   class Gateway
     attr_accessor :name, :url, :environment
 
     def initialize(name, environment)
       @name = name
-      @url = Object.const_get("Sigiss::City::#{name.to_s.capitalize}").new(environment).url
+      @url = get_url(name, environment)
       @environment = environment
+    end
+
+    def get_url(name, environment)
+      YAML.load_file(File.join(File.dirname(__FILE__), 'cities.yml'))[environment.to_s][name.to_s]
     end
 
   end
