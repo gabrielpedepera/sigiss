@@ -14,7 +14,7 @@ describe Sigiss::Provider do
       @gateway = Sigiss::Provider.new(@params)
     end
 
-    it 'has attributes' do
+    it 'has attributes: ccm, cnpj, senha, crc, crc_estado' do
       expect(@gateway).to have_attributes(@params)
     end
 
