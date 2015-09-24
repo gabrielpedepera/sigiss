@@ -12,3 +12,4 @@ invoice = Sigiss::Invoice.new(gateway: gateway, provider: provider, taker: taker
 
 invoice.create(params)
 
+# Prestador

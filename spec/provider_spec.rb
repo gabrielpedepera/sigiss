@@ -11,11 +11,11 @@ describe Sigiss::Provider do
         crc: '456',
         crc_estado: 'SP'
       }
-      @gateway = Sigiss::Provider.new(@params)
+      @provider = Sigiss::Provider.new(@params)
     end
 
     it 'has attributes: ccm, cnpj, senha, crc, crc_estado' do
-      expect(@gateway).to have_attributes(@params)
+      expect(@provider).to have_attributes(@params)
     end
 
   end
