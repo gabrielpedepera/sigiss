@@ -10,7 +10,7 @@ module Sigiss
     end
 
     def get_url(name, environment)
-      YAML.load_file(File.join(File.dirname(__FILE__), 'cities.yml'))[environment.to_s][name.to_s]
+      YAML.load_file(File.join(Sigiss.root, 'configs.yml'))[environment.to_s][name.to_s]
     end
 
   end

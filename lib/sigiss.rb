@@ -4,5 +4,9 @@ require "sigiss/provider"
 require "sigiss/taker"
 
 module Sigiss
-  # Your code goes here...
+
+  def self.root
+    File.dirname __dir__
+  end
+
 end
