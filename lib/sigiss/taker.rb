@@ -31,7 +31,7 @@ module Sigiss
       @complemento_do_endereco_do_tomador = params[:complemento_do_endereco_do_tomador]
       @bairro_do_tomador = params[:bairro_do_tomador]
       @cep_do_tomador = params[:cep_do_tomador]
-      @codigo_da_cidade_do_tomador = params[:codigo_da_cidade_do_tomador]
+      @codigo_da_cidade_do_tomador = params[:codigo_da_cidade_do_tomador] || Sigiss::IBGE.get_code(params[:cidade])
       @telefone_do_tomador = params[:telefone_do_tomador]
       @ramal_tomador = params[:ramal_tomador]
       @fax_tomador = params[:fax_tomador]

@@ -1,6 +1,13 @@
+require 'lotus/validations'
 module Sigiss
   class Provider
+    include Lotus::Validations
+
     attr_accessor :ccm,  :cnpj, :senha, :crc, :crc_estado
+
+    validates :ccm,  presence: true
+    validates :cnpj, presence: true
+    validates :senha, presence: true
 
     def initialize(params = {})
       @ccm = params[:ccm]

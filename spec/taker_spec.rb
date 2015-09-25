@@ -32,4 +32,20 @@ describe Sigiss::Taker do
 
   end
 
+  context 'recover code city' do
+
+    it 'passing code city' do
+      expect(Sigiss::Taker.new(codigo_da_cidade_do_tomador: '3127107').codigo_da_cidade_do_tomador).to eq('3127107')
+    end
+
+    it 'passing name city' do
+      expect(Sigiss::Taker.new(cidade: 'Assis').codigo_da_cidade_do_tomador).to eq('3504008')
+    end
+
+    it 'passing name and code city, code preferences' do
+      expect(Sigiss::Taker.new(cidade: 'Marília', codigo_da_cidade_do_tomador: '3127107').codigo_da_cidade_do_tomador).to eq('3127107')
+    end
+
+  end
+
 end
