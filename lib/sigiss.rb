@@ -1,4 +1,5 @@
 require "sigiss/version"
+require "sigiss/ibge"
 require "sigiss/gateway"
 require "sigiss/provider"
 require "sigiss/taker"
