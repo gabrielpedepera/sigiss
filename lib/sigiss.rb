@@ -3,6 +3,7 @@ require "sigiss/ibge"
 require "sigiss/gateway"
 require "sigiss/provider"
 require "sigiss/taker"
+require "sigiss/invoice"
 
 module Sigiss
 
