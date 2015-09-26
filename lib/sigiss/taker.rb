@@ -1,41 +1,53 @@
+require 'lotus/validations'
 module Sigiss
   class Taker
+    include Lotus::Validations
+
     attr_accessor :tomador_tipo,
-                  :cnpj_tomador,
-                  :email_do_tomador,
-                  :inscricao_municipal_tomador,
-                  :inscricao_estadual_tomador,
-                  :nome_razão_do_tomador,
-                  :nome_fantasia_do_tomador,
-                  :endereço_do_tomador,
-                  :numero_do_endereco_do_tomador,
-                  :complemento_do_endereco_do_tomador,
-                  :bairro_do_tomador,
-                  :cep_do_tomador,
-                  :codigo_da_cidade_do_tomador,
-                  :telefone_do_tomador,
-                  :ramal_tomador,
-                  :fax_tomador,
-                  :ramal_fax_tomador
+                  :tomador_cnpj,
+                  :tomador_email,
+                  :tomador_im,
+                  :tomador_ie,
+                  :tomador_razao,
+                  :tomador_fantasia,
+                  :tomador_endereco,
+                  :tomador_numero,
+                  :tomador_complemento,
+                  :tomador_bairro,
+                  :tomador_CEP,
+                  :tomador_cod_cidade,
+                  :tomador_fone,
+                  :tomador_ramal,
+                  :tomador_fax,
+                  :tomador_ramal_fax
+
+    validates :tomador_tipo, presence: true
+    validates :tomador_cnpj, presence: true
+    validates :tomador_razao, presence: true
+    validates :tomador_endereco, presence: true
+    validates :tomador_numero, presence: true
+    validates :tomador_bairro, presence: true
+    validates :tomador_CEP, presence: true
+    validates :tomador_cod_cidade, presence: true
 
     def initialize(params = {})
       @tomador_tipo = params[:tomador_tipo]
-      @cnpj_tomador = params[:cnpj_tomador]
-      @email_do_tomador = params[:email_do_tomador]
-      @inscricao_municipal_tomador = params[:inscricao_municipal_tomador]
-      @inscricao_estadual_tomador = params[:inscricao_estadual_tomador]
-      @nome_razão_do_tomador = params[:nome_razão_do_tomador]
-      @nome_fantasia_do_tomador = params[:nome_fantasia_do_tomador]
-      @endereço_do_tomador = params[:endereço_do_tomador]
-      @numero_do_endereco_do_tomador = params[:numero_do_endereco_do_tomador]
-      @complemento_do_endereco_do_tomador = params[:complemento_do_endereco_do_tomador]
-      @bairro_do_tomador = params[:bairro_do_tomador]
-      @cep_do_tomador = params[:cep_do_tomador]
-      @codigo_da_cidade_do_tomador = params[:codigo_da_cidade_do_tomador] || Sigiss::IBGE.get_code(params[:cidade])
-      @telefone_do_tomador = params[:telefone_do_tomador]
-      @ramal_tomador = params[:ramal_tomador]
-      @fax_tomador = params[:fax_tomador]
-      @ramal_fax_tomador = params[:ramal_fax_tomador]
+      @tomador_cnpj = params[:tomador_cnpj]
+      @tomador_email = params[:tomador_email]
+      @tomador_im = params[:tomador_im]
+      @tomador_ie = params[:tomador_ie]
+      @tomador_razao = params[:tomador_razao]
+      @tomador_fantasia = params[:tomador_fantasia]
+      @tomador_endereco = params[:tomador_endereco]
+      @tomador_numero = params[:tomador_numero]
+      @tomador_complemento = params[:tomador_complemento]
+      @tomador_bairro = params[:tomador_bairro]
+      @tomador_CEP = params[:tomador_CEP]
+      @tomador_cod_cidade = params[:tomador_cod_cidade] || Sigiss::IBGE.get_code(params[:cidade])
+      @tomador_fone = params[:tomador_fone]
+      @tomador_ramal = params[:tomador_ramal]
+      @tomador_fax = params[:tomador_fax]
+      @tomador_ramal_fax = params[:tomador_ramal_fax]
     end
 
   end
