@@ -9,12 +9,12 @@ module Sigiss
     validates :cnpj, presence: true
     validates :senha, presence: true
 
-    def initialize(params = {})
-      @ccm = params[:ccm]
-      @cnpj = params[:cnpj]
-      @senha = params[:senha]
-      @crc = params[:crc]
-      @crc_estado = params[:crc_estado]
+    def initialize(attributes = {})
+      @ccm = attributes[:ccm]
+      @cnpj = attributes[:cnpj]
+      @senha = attributes[:senha]
+      @crc = attributes[:crc]
+      @crc_estado = attributes[:crc_estado]
     end
 
   end
