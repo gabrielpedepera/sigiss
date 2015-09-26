@@ -1,5 +1,6 @@
 require 'sigiss'
 require 'pry'
+require 'helpers'
 
 RSpec.configure do |config|
   config.filter_run focus: true
@@ -12,4 +13,7 @@ RSpec.configure do |config|
   config.mock_with :rspec do |mocks|
     mocks.verify_partial_doubles = true
   end
+
+  config.include Helpers
+
 end

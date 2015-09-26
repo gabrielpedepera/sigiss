@@ -3,19 +3,13 @@ require 'spec_helper'
 describe Sigiss::Provider do
 
   before(:each) do
-    @params = {
-      ccm: '123',
-      cnpj: '20.796.048/0001-65',
-      senha: 'password',
-      crc: '456',
-      crc_estado: 'SP'
-    }
+    @params = provider_params
     @provider = Sigiss::Provider.new(@params)
   end
 
   context 'validations' do
 
-    it 'valid?' do
+    it 'has valid attributes' do
       expect(@provider.valid?).to be_truthy
     end
 
