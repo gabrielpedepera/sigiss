@@ -8,8 +8,14 @@ provider = Sigiss::Provider.new(params) # Prestador
 
 taker = Sigiss::Taker.new(params) # Tomador
 
+# Criar
 invoice = Sigiss::Invoice.new(gateway: gateway, provider: provider, taker: taker)
-
 invoice.create(params)
 
-# Prestador
+# Cancelar
+invoice = Sigiss::Invoice.new(gateway: gateway, provider: provider)
+invoice.cancel(params)
+
+# Consultar
+invoice = Sigiss::Invoice.new(gateway: gateway, provider: provider)
+invoice.get(params)
