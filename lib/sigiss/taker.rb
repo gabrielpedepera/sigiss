@@ -1,7 +1,9 @@
 require 'lotus/validations'
+require 'sigiss/extension'
 module Sigiss
   class Taker
     include Lotus::Validations
+    include Sigiss::Extension
 
     attr_accessor :tomador_tipo,
                   :tomador_cnpj,

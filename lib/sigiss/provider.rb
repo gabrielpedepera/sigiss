@@ -1,7 +1,9 @@
 require 'lotus/validations'
+require 'sigiss/extension'
 module Sigiss
   class Provider
     include Lotus::Validations
+    include Sigiss::Extension
 
     attr_accessor :ccm,  :cnpj, :senha, :crc, :crc_estado
 

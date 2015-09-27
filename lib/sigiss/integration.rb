@@ -16,7 +16,7 @@ module Sigiss
       end
 
       def data_to_issue
-        { :DescricaoRps => provider.to_h.merge(taker.to_h).merge(data.to_h) }
+        { :DescricaoRps => provider.to_hash.merge(taker.to_hash).merge(data.to_hash) }
       end
 
       protected

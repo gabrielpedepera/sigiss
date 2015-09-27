@@ -1,12 +1,17 @@
 require 'spec_helper'
 
 describe Sigiss::Taker do
-  context 'validations' do
 
-    before(:each) do
-      @params = taker_params
-      @taker = Sigiss::Taker.new(@params)
-    end
+  before(:each) do
+    @params = taker_params
+    @taker = Sigiss::Taker.new(@params)
+  end
+
+  it '#to_hash' do
+    expect(@taker.to_hash).to eq(taker_params)
+  end
+
+  context 'validations' do
 
     it 'has attributes' do
       expect(@taker).to have_attributes(@params)

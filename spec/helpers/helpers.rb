@@ -24,11 +24,11 @@ module Helpers
 
   def provider_params
     {
-      ccm: '123',
-      cnpj: '20.796.048/0001-65',
-      senha: 'password',
-      crc: '456',
-      crc_estado: 'SP'
+      ccm: '124',
+      cnpj: '96165099939',
+      senha: '123',
+      crc: '',
+      crc_estado: ''
     }
   end
 

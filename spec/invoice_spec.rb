@@ -25,6 +25,7 @@ describe Sigiss::Invoice do
     end
 
     context '#issue' do
+
       it 'has response success' do
         response = @invoice.issue
         expect(response).to have_key(:success)

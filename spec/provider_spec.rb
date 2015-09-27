@@ -7,6 +7,10 @@ describe Sigiss::Provider do
     @provider = Sigiss::Provider.new(@params)
   end
 
+  it '#to_hash' do
+    expect(@provider.to_hash).to eq(provider_params)
+  end
+
   context 'validations' do
 
     it 'has valid attributes' do
