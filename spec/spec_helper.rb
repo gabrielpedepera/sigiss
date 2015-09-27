@@ -1,6 +1,6 @@
 require 'sigiss'
 require 'pry'
-require 'helpers'
+require 'helpers/helpers.rb'
 
 RSpec.configure do |config|
   config.filter_run focus: true

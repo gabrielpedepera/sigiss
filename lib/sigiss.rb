@@ -4,6 +4,9 @@ require "sigiss/gateway"
 require "sigiss/provider"
 require "sigiss/taker"
 require "sigiss/invoice"
+require "sigiss/invoice_data/invoice_data"
+require "sigiss/invoice_data/invoice_data_create"
+require "sigiss/integration"
 
 module Sigiss
 

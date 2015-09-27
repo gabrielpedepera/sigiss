@@ -32,4 +32,16 @@ module Helpers
     }
   end
 
+  def invoice_data_params
+    {
+      aliquota_simples: '4',
+      id_sis_legado: '123',
+      servico: '105',
+      situacao: 'tp',
+      valor: '10.00',
+      base: '100,5',
+      descricaoNF: 'Teste NF'
+    }
+  end
+
 end
