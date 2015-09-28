@@ -26,6 +26,10 @@ describe Sigiss::Invoice do
 
     context '#issue' do
 
+      it 'has params hash DescricaoRps' do
+        expect(@invoice.data_to_issue).to eq(invoice_params)
+      end
+
       it 'has response success' do
         response = @invoice.issue
         expect(response).to have_key(:success)
