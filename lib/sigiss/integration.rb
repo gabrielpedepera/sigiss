@@ -6,7 +6,6 @@ module Sigiss
       execute do
         client = Savon.client(wsdl: gateway.url)
         response = client.call(:gerar_nota, message: data_to_issue)
-        binding.pry
         { success: true, body: response.body }
       end
     end

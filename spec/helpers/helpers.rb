@@ -2,7 +2,7 @@ module Helpers
 
   def taker_params
     {
-      tomador_tipo: '1',
+      tomador_tipo: '3',
       tomador_cnpj: '20.796.048/0001-65',
       tomador_email: 'email@tomador.com',
       tomador_im: '',
@@ -52,7 +52,7 @@ module Helpers
         senha: "123",
         crc: "",
         crc_estado: "",
-        tomador_tipo: "1",
+        tomador_tipo: "3",
         tomador_cnpj: "20.796.048/0001-65",
         tomador_email: "email@tomador.com",
         tomador_im: "",
