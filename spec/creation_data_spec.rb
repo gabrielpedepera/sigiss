@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe Sigiss::InvoiceDataCreate do
+describe Sigiss::CreationData do
 
   before(:each) do
     @params = invoice_data_params
-    @invoice_data = Sigiss::InvoiceDataCreate.new(@params)
+    @invoice_data = Sigiss::CreationData.new(@params)
   end
 
   it '#to_hash' do

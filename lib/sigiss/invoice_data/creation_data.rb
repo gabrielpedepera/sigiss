@@ -1,5 +1,5 @@
 module Sigiss
-  class InvoiceDataCreate < InvoiceData
+  class CreationData < InvoiceData
 
     attr_accessor :aliquota_simples,
                   :id_sis_legado,

@@ -23,7 +23,7 @@ module Sigiss
     end
 
     def create(params = {})
-      @data = Sigiss::InvoiceDataCreate.new(params)
+      @data = Sigiss::CreationData.new(params)
     end
 
   end

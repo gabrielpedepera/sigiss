@@ -4,14 +4,14 @@ module Sigiss
 
     def issue
       execute do
-        client = Savon.client(wsdl: gateway.url)
+        client = Savon.client(wsdl: gateway.url, convert_request_keys_to: :none)
         response = client.call(:gerar_nota, message: data_to_issue)
         { success: true, body: response.body }
       end
     end
 
     def data_to_issue
-      { :DescricaoRps => provider.to_hash.merge(taker.to_hash).merge(data.to_hash) }
+      { DescricaoRps: provider.to_hash.merge(taker.to_hash).merge(data.to_hash) }
     end
 
     protected
