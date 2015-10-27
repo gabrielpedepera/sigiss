@@ -21,22 +21,22 @@ describe Sigiss::Invoice do
   context '#create' do
 
     before(:each) do
-      @invoice.create(invoice_data_params)
+      @invoice.build(:issue, invoice_data_params)
     end
 
-    context '#issue' do
+    context '#issue!' do
 
       it 'has params hash DescricaoRps' do
         expect(@invoice.data_to_issue).to eq(invoice_params)
       end
 
       it 'has response success' do
-        response = @invoice.issue
+        response = @invoice.issue!
         expect(response).to have_key(:success)
       end
 
       it 'has response body' do
-        response = @invoice.issue
+        response = @invoice.issue!
         expect(response).to have_key(:body)
       end
     end

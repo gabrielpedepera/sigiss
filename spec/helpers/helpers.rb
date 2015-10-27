@@ -2,21 +2,21 @@ module Helpers
 
   def taker_params
     {
-      tomador_tipo: '3',
-      tomador_cnpj: '20.796.048/0001-65',
+      tomador_tipo: '2',
+      tomador_cnpj: '08600061822',
       tomador_email: 'email@tomador.com',
       tomador_im: '',
       tomador_ie: '',
-      tomador_razao: 'ACME',
-      tomador_fantasia: 'ACME',
+      tomador_razao: 'Pagador de Impostos',
+      tomador_fantasia: '',
       tomador_endereco: 'Rua de Asfalto',
       tomador_numero: '100',
       tomador_complemento: 'Fundos',
       tomador_bairro: 'Bairro Feliz',
-      tomador_CEP: '111.331.155-00',
+      tomador_CEP: '17512752',
       tomador_cod_cidade: '3127107',
       tomador_fone: '3499998888',
-      tomador_ramal: '21',
+      tomador_ramal: '',
       tomador_fax: '',
       tomador_ramal_fax: ''
     }
@@ -24,9 +24,9 @@ module Helpers
 
   def provider_params
     {
-      ccm: '124',
-      cnpj: '96165099939',
-      senha: '123',
+      ccm: '31000',
+      cnpj: '90082563000169',
+      senha: '12345',
       crc: '',
       crc_estado: ''
     }
@@ -34,12 +34,12 @@ module Helpers
 
   def invoice_data_params
     {
-      aliquota_simples: '4',
-      id_sis_legado: '123',
+      aliquota_simples: '',
+      id_sis_legado: '',
       servico: '105',
       situacao: 'tp',
       valor: '10.00',
-      base: '100,5',
+      base: '10.00',
       descricaoNF: 'Teste NF'
     }
   end
@@ -47,34 +47,34 @@ module Helpers
   def invoice_params
     {
       DescricaoRps:
-      { ccm: "124",
-        cnpj: "96165099939",
-        senha: "123",
+      { ccm: "31000",
+        cnpj: "90082563000169",
+        senha: "12345",
         crc: "",
         crc_estado: "",
-        tomador_tipo: "3",
-        tomador_cnpj: "20.796.048/0001-65",
+        tomador_tipo: "2",
+        tomador_cnpj: "08600061822",
         tomador_email: "email@tomador.com",
         tomador_im: "",
         tomador_ie: "",
-        tomador_razao: "ACME",
-        tomador_fantasia: "ACME",
+        tomador_razao: "Pagador de Impostos",
+        tomador_fantasia: "",
         tomador_endereco: "Rua de Asfalto",
         tomador_numero: "100",
         tomador_complemento: "Fundos",
         tomador_bairro: "Bairro Feliz",
-        tomador_CEP: "111.331.155-00",
+        tomador_CEP: "17512752",
         tomador_cod_cidade: "3127107",
         tomador_fone: "3499998888",
-        tomador_ramal: "21",
+        tomador_ramal: "",
         tomador_fax: "",
         tomador_ramal_fax: "",
-        aliquota_simples: "4",
-        id_sis_legado: "123",
+        aliquota_simples: "",
+        id_sis_legado: "",
         servico: "105",
         situacao: "tp",
         valor: "10.00",
-        base: "100,5",
+        base: "10.00",
         descricaoNF: "Teste NF" }
       }
   end

@@ -10,12 +10,15 @@ taker = Sigiss::Taker.new(params) # Tomador
 
 # Criar
 invoice = Sigiss::Invoice.new(gateway: gateway, provider: provider, taker: taker)
-invoice.create(params)
+invoice.build(issue: params)
+invoice.issue!
 
 # Cancelar
 invoice = Sigiss::Invoice.new(gateway: gateway, provider: provider)
-invoice.cancel(params)
+invoice.build(cancel: params)
+invoice.cancel!
 
 # Consultar
 invoice = Sigiss::Invoice.new(gateway: gateway, provider: provider)
-invoice.get(params)
+invoice.build(verify: params)
+invoice.verify!

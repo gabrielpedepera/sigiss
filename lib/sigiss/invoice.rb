@@ -22,8 +22,13 @@ module Sigiss
       @taker = attributes[:taker]
     end
 
-    def create(params = {})
-      @data = Sigiss::CreationData.new(params)
+    def build(method, params = {})
+      case method
+      when :issue
+        @data = Sigiss::CreationData.new(params)
+      else
+        @data = {}
+      end
     end
 
   end
