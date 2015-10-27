@@ -6,6 +6,7 @@ require "sigiss/taker"
 require "sigiss/invoice"
 require "sigiss/invoice_data/invoice_data"
 require "sigiss/invoice_data/creation_data"
+require "sigiss/invoice_data/fetch_data"
 require "sigiss/extension"
 require "sigiss/integration"
 

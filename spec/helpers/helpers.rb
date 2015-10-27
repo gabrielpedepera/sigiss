@@ -32,15 +32,24 @@ module Helpers
     }
   end
 
-  def invoice_data_params
+  def creation_data_params
     {
       aliquota_simples: '',
       id_sis_legado: '',
       servico: '105',
       situacao: 'tp',
-      valor: '10.00',
-      base: '10.00',
+      valor: '10,00',
+      base: '10,00',
       descricaoNF: 'Teste NF'
+    }
+  end
+
+  def fetch_data_params
+    {
+      nota: '73808',
+      serie: '1',
+      autenticidade: 'GTETEFXF',
+      valor: '10,00'
     }
   end
 
@@ -73,8 +82,8 @@ module Helpers
         id_sis_legado: "",
         servico: "105",
         situacao: "tp",
-        valor: "10.00",
-        base: "10.00",
+        valor: "10,00",
+        base: "10,00",
         descricaoNF: "Teste NF" }
       }
   end

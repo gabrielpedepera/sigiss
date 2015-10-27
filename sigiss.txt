@@ -13,12 +13,12 @@ invoice = Sigiss::Invoice.new(gateway: gateway, provider: provider, taker: taker
 invoice.build(issue: params)
 invoice.issue!
 
+# Consultar
+invoice = Sigiss::Invoice.new(gateway: gateway, provider: provider)
+invoice.build(fetch: params)
+invoice.fetch!
+
 # Cancelar
 invoice = Sigiss::Invoice.new(gateway: gateway, provider: provider)
 invoice.build(cancel: params)
 invoice.cancel!
-
-# Consultar
-invoice = Sigiss::Invoice.new(gateway: gateway, provider: provider)
-invoice.build(verify: params)
-invoice.verify!

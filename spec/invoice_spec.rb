@@ -21,7 +21,7 @@ describe Sigiss::Invoice do
   context '#create' do
 
     before(:each) do
-      @invoice.build(:issue, invoice_data_params)
+      @invoice.build(:issue, creation_data_params)
     end
 
     context '#issue!' do
