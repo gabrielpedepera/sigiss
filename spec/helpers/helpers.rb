@@ -46,9 +46,9 @@ module Helpers
 
   def fetch_data
     {
-      nota: '73808',
+      nota: '13114',
       serie: '1',
-      autenticidade: 'GTETEFXF',
+      autenticidade: '2ZZGUTL0',
       valor: '10,00'
     }
   end
@@ -56,15 +56,12 @@ module Helpers
   def fetch_request
     {
       DadosConsultaNota: {
-        nota: '73808',
+        nota: '13114',
         serie: '1',
-        autenticidade: 'GTETEFXF',
+        autenticidade: '2ZZGUTL0',
         valor: '10,00',
-        ccm: '31000',
-        cnpj: '90082563000169',
-        senha: '12345',
-        crc: '',
-        crc_estado: ''
+        prestador_ccm: '31000',
+        prestador_cnpj: '90082563000169'
       }
     }
   end

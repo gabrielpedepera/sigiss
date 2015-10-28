@@ -11,7 +11,7 @@ module Sigiss
     end
 
     def data_fetch
-      { DadosConsultaNota: provider.to_hash.merge(data.to_hash) }
+      { DadosConsultaNota: provider.to_fetch.merge(data.to_hash) }
     end
 
     def data_issue
@@ -23,7 +23,7 @@ module Sigiss
     def send(action, data)
       execute do
         client = Savon.client(wsdl: gateway.url, convert_request_keys_to: :none)
-        response = client.call(:gerar_nota, message: data)
+        response = client.call(action, message: data)
         { success: true, body: response.body }
       end
     end

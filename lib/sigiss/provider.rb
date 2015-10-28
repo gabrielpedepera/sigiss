@@ -19,5 +19,9 @@ module Sigiss
       @crc_estado = attributes[:crc_estado]
     end
 
+    def to_fetch
+      { prestador_cnpj: @cnpj, prestador_ccm: @ccm }
+    end
+
   end
 end
