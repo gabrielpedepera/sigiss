@@ -32,7 +32,7 @@ module Helpers
     }
   end
 
-  def creation_data_params
+  def creation_data
     {
       aliquota_simples: '',
       id_sis_legado: '',
@@ -44,7 +44,7 @@ module Helpers
     }
   end
 
-  def fetch_data_params
+  def fetch_data
     {
       nota: '73808',
       serie: '1',
@@ -53,10 +53,26 @@ module Helpers
     }
   end
 
-  def invoice_params
+  def fetch_request
     {
-      DescricaoRps:
-      { ccm: "31000",
+      DadosConsultaNota: {
+        nota: '73808',
+        serie: '1',
+        autenticidade: 'GTETEFXF',
+        valor: '10,00',
+        ccm: '31000',
+        cnpj: '90082563000169',
+        senha: '12345',
+        crc: '',
+        crc_estado: ''
+      }
+    }
+  end
+
+  def issue_request
+    {
+      DescricaoRps: {
+        ccm: "31000",
         cnpj: "90082563000169",
         senha: "12345",
         crc: "",
@@ -84,8 +100,9 @@ module Helpers
         situacao: "tp",
         valor: "10,00",
         base: "10,00",
-        descricaoNF: "Teste NF" }
+        descricaoNF: "Teste NF"
       }
+    }
   end
 
 end

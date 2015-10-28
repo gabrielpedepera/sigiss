@@ -26,6 +26,8 @@ module Sigiss
       case method
       when :issue
         @data = Sigiss::CreationData.new(params)
+      when :fetch
+        @data = Sigiss::FetchData.new(params)
       else
         @data = {}
       end

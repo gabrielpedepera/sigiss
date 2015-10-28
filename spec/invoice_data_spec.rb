@@ -4,12 +4,12 @@ describe Sigiss::InvoiceData do
 
   context 'creation_data' do
     before(:each) do
-      @params = creation_data_params
+      @params = creation_data
       @invoice_data = Sigiss::CreationData.new(@params)
     end
 
     it '#to_hash' do
-      expect(@invoice_data.to_hash).to eq(creation_data_params)
+      expect(@invoice_data.to_hash).to eq(creation_data)
     end
 
     context '#initialize' do
@@ -39,14 +39,14 @@ describe Sigiss::InvoiceData do
       end
     end
 
-    context 'fetch_data', :focus do
+    context 'fetch_data' do
       before(:each) do
-        @params = fetch_data_params
+        @params = fetch_data
         @invoice_data = Sigiss::FetchData.new(@params)
       end
 
       it '#to_hash' do
-        expect(@invoice_data.to_hash).to eq(fetch_data_params)
+        expect(@invoice_data.to_hash).to eq(fetch_data)
       end
 
       context '#initialize' do

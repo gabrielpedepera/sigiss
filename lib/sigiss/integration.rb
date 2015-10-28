@@ -3,10 +3,18 @@ module Sigiss
   module Integration
 
     def issue!
-      send(:gerar_nota, data_to_issue)
+      send(:gerar_nota, data_issue)
     end
-    
-    def data_to_issue
+
+    def fetch!
+      send(:consultar_nota_valida, data_fetch)
+    end
+
+    def data_fetch
+      { DadosConsultaNota: provider.to_hash.merge(data.to_hash) }
+    end
+
+    def data_issue
       { DescricaoRps: provider.to_hash.merge(taker.to_hash).merge(data.to_hash) }
     end
 
