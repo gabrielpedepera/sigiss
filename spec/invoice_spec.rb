@@ -19,7 +19,7 @@ describe Sigiss::Invoice do
   context '#build' do
     context '#issue!' do
       before(:each) do
-        @invoice.build(:issue, creation_data)
+        @invoice.build(:issue, issue_data)
       end
 
       it 'has params hash DescricaoRps' do
@@ -53,6 +53,26 @@ describe Sigiss::Invoice do
 
       it 'has response body' do
         response = @invoice.fetch!
+        expect(response).to have_key(:body)
+      end
+    end
+
+    context '#cancel!' do
+      before(:each) do
+        @invoice.build(:cancel, cancel_data)
+      end
+
+      it 'has params hash DadosCancelaNota' do
+        expect(@invoice.data_cancel).to eq(cancel_request)
+      end
+
+      it 'has response success' do
+        response = @invoice.cancel!
+        expect(response).to have_key(:success)
+      end
+
+      it 'has response body' do
+        response = @invoice.cancel!
         expect(response).to have_key(:body)
       end
     end

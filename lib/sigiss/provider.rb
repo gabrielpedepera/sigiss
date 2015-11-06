@@ -23,5 +23,9 @@ module Sigiss
       { prestador_cnpj: @cnpj, prestador_ccm: @ccm }
     end
 
+    def to_cancel
+      { cnpj: @cnpj, ccm: @ccm, senha: @senha }
+    end
+
   end
 end

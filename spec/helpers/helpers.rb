@@ -32,15 +32,24 @@ module Helpers
     }
   end
 
-  def creation_data
+  def cancel_data
     {
-      aliquota_simples: '',
-      id_sis_legado: '',
-      servico: '105',
-      situacao: 'tp',
-      valor: '10,00',
-      base: '10,00',
-      descricaoNF: 'Teste NF'
+      nota: '13114',
+      motivo: 'Falha no Engano',
+      email: 'hommer@simpsons.com'
+    }
+  end
+
+  def cancel_request
+    {
+      DadosCancelaNota: {
+        ccm: '31000',
+        cnpj: '90082563000169',
+        senha: '12345',
+        nota: '13114',
+        motivo: 'Falha no Engano',
+        email: 'hommer@simpsons.com'
+      }
     }
   end
 
@@ -63,6 +72,18 @@ module Helpers
         prestador_ccm: '31000',
         prestador_cnpj: '90082563000169'
       }
+    }
+  end
+
+  def issue_data
+    {
+      aliquota_simples: '',
+      id_sis_legado: '',
+      servico: '105',
+      situacao: 'tp',
+      valor: '10,00',
+      base: '10,00',
+      descricaoNF: 'Teste NF'
     }
   end
 

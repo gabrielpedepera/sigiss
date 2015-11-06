@@ -10,12 +10,20 @@ module Sigiss
       send(:consultar_nota_valida, data_fetch)
     end
 
-    def data_fetch
-      { DadosConsultaNota: provider.to_fetch.merge(data.to_hash) }
+    def cancel!
+      send(:cancelar_nota, data_cancel)
     end
 
     def data_issue
       { DescricaoRps: provider.to_hash.merge(taker.to_hash).merge(data.to_hash) }
+    end
+
+    def data_fetch
+      { DadosConsultaNota: provider.to_fetch.merge(data.to_hash) }
+    end
+
+    def data_cancel
+      { DadosCancelaNota: provider.to_cancel.merge(data.to_hash) }
     end
 
     protected

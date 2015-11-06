@@ -25,9 +25,11 @@ module Sigiss
     def build(method, params = {})
       case method
       when :issue
-        @data = Sigiss::CreationData.new(params)
+        @data = Sigiss::IssueData.new(params)
       when :fetch
         @data = Sigiss::FetchData.new(params)
+      when :cancel
+        @data = Sigiss::CancelData.new(params)
       else
         @data = {}
       end
