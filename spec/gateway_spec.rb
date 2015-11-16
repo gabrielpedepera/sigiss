@@ -20,7 +20,7 @@ describe Sigiss::Gateway do
     end
   end
 
-  context 'invalid', :focus do
+  context 'invalid' do
 
     it 'without parameters' do
       gateway = Sigiss::Gateway.new
