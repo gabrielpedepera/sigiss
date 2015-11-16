@@ -27,13 +27,17 @@ describe Sigiss::Invoice do
       end
 
       it 'has response success' do
-        response = @invoice.issue!
-        expect(response).to have_key(:success)
+        VCR.use_cassette('issue') do
+          response = @invoice.issue!
+          expect(response).to have_key(:success)
+        end
       end
 
       it 'has response body' do
-        response = @invoice.issue!
-        expect(response).to have_key(:body)
+        VCR.use_cassette('issue') do
+          response = @invoice.issue!
+          expect(response).to have_key(:body)
+        end
       end
     end
 
@@ -47,13 +51,17 @@ describe Sigiss::Invoice do
       end
 
       it 'has response success' do
-        response = @invoice.fetch!
-        expect(response).to have_key(:success)
+        VCR.use_cassette('fetch') do
+          response = @invoice.fetch!
+          expect(response).to have_key(:success)
+        end
       end
 
       it 'has response body' do
-        response = @invoice.fetch!
-        expect(response).to have_key(:body)
+        VCR.use_cassette('fetch') do
+          response = @invoice.fetch!
+          expect(response).to have_key(:body)
+        end
       end
     end
 
@@ -67,13 +75,17 @@ describe Sigiss::Invoice do
       end
 
       it 'has response success' do
-        response = @invoice.cancel!
-        expect(response).to have_key(:success)
+        VCR.use_cassette('cancel') do
+          response = @invoice.cancel!
+          expect(response).to have_key(:success)
+        end
       end
 
       it 'has response body' do
-        response = @invoice.cancel!
-        expect(response).to have_key(:body)
+        VCR.use_cassette('cancel') do
+          response = @invoice.cancel!
+          expect(response).to have_key(:body)
+        end
       end
     end
 

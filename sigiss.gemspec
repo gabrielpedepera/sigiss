@@ -24,6 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "activemodel", "~> 4.2.5"
   spec.add_development_dependency "savon"
   spec.add_development_dependency "rspec"
+  spec.add_development_dependency "vcr"
   spec.add_development_dependency "pry"
   spec.add_development_dependency "codeclimate-test-reporter"
 

@@ -3,7 +3,13 @@ CodeClimate::TestReporter.start
 
 require 'sigiss'
 require 'pry'
+require 'vcr'
 require 'helpers/helpers.rb'
+
+VCR.configure do |config|
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  config.hook_into :webmock
+end
 
 RSpec.configure do |config|
 
