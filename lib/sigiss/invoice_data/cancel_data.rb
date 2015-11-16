@@ -1,12 +1,9 @@
 module Sigiss
   class CancelData < InvoiceData
 
-    attr_accessor :nota,
-                  :motivo,
-                  :email
+    attr_accessor :nota, :motivo, :email
 
-    validates :nota, presence: true
-    validates :motivo, presence: true
+    validates_presence_of :nota, :motivo
 
     def initialize(attributes = {})
       @nota = attributes[:nota]

@@ -22,3 +22,9 @@ invoice.fetch!
 invoice = Sigiss::Invoice.new(gateway: gateway, provider: provider)
 invoice.build(cancel: params)
 invoice.cancel!
+
+# steps
+
+- Objects validations
+- stubs
+- documentation

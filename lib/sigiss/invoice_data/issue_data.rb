@@ -9,10 +9,7 @@ module Sigiss
                   :base,
                   :descricaoNF
 
-    validates :servico, presence: true
-    validates :situacao, presence: true
-    validates :valor, presence: true
-    validates :base, presence: true
+    validates_presence_of :servico, :situacao, :valor, :base
 
     def initialize(attributes = {})
       @aliquota_simples = attributes[:aliquota_simples]

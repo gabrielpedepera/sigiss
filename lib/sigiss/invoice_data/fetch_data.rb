@@ -1,15 +1,8 @@
 module Sigiss
   class FetchData < InvoiceData
 
-    attr_accessor :nota,
-                  :serie,
-                  :autenticidade,
-                  :valor
-
-    validates :nota, presence: true
-    validates :serie, presence: true
-    validates :autenticidade, presence: true
-    validates :valor, presence: true
+    attr_accessor :nota, :serie, :autenticidade, :valor
+    validates_presence_of :nota, :serie, :autenticidade, :valor
 
     def initialize(attributes = {})
       @nota = attributes[:nota]

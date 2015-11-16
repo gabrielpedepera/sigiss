@@ -1,8 +1,8 @@
-require 'lotus/validations'
 require 'sigiss/extension'
+require 'active_model'
 module Sigiss
   class Taker
-    include Lotus::Validations
+    include ActiveModel::Validations
     include Sigiss::Extension
 
     attr_accessor :tomador_tipo,
@@ -23,14 +23,14 @@ module Sigiss
                   :tomador_fax,
                   :tomador_ramal_fax
 
-    validates :tomador_tipo, presence: true
-    validates :tomador_cnpj, presence: true
-    validates :tomador_razao, presence: true
-    validates :tomador_endereco, presence: true
-    validates :tomador_numero, presence: true
-    validates :tomador_bairro, presence: true
-    validates :tomador_CEP, presence: true
-    validates :tomador_cod_cidade, presence: true
+    validates_presence_of :tomador_tipo,
+                          :tomador_cnpj,
+                          :tomador_razao,
+                          :tomador_endereco,
+                          :tomador_numero,
+                          :tomador_bairro,
+                          :tomador_CEP,
+                          :tomador_cod_cidade,
 
     def initialize(attributes = {})
       @tomador_tipo = attributes[:tomador_tipo]

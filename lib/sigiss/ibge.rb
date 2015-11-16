@@ -4,6 +4,7 @@ module Sigiss
     class << self
 
       def get_code(name)
+        return if name.nil?
         cities.each do |city, code|
           return code if city == name.downcase
         end

@@ -1,15 +1,12 @@
-require 'lotus/validations'
 require 'sigiss/extension'
 module Sigiss
   class Provider
-    include Lotus::Validations
+    include ActiveModel::Validations
     include Sigiss::Extension
 
     attr_accessor :ccm,  :cnpj, :senha, :crc, :crc_estado
 
-    validates :ccm,  presence: true
-    validates :cnpj, presence: true
-    validates :senha, presence: true
+    validates_presence_of :ccm, :cnpj, :senha
 
     def initialize(attributes = {})
       @ccm = attributes[:ccm]

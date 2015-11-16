@@ -1,8 +1,8 @@
-require 'lotus/validations'
+require 'active_model'
 require 'sigiss/extension'
 module Sigiss
   class InvoiceData
-    include Lotus::Validations
+    include ActiveModel::Validations
     include Sigiss::Extension
 
   end

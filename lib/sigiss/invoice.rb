@@ -1,20 +1,13 @@
-require 'lotus/validations'
 require 'sigiss/integration'
-
+require 'active_model'
 module Sigiss
   class Invoice
-    include Lotus::Validations
+    include ActiveModel::Validations
     include Sigiss::Integration
 
-    attr_accessor :gateway,
-                  :provider,
-                  :taker,
-                  :data
+    attr_accessor :gateway, :provider, :taker, :data
 
-    validates :gateway, type: Gateway, presence: true
-    validates :provider, type: Provider, presence: true
-    validates :taker, type: Taker
-    validates :data, presence: true
+    validates_presence_of :gateway, :provider, :taker, :data
 
     def initialize(attributes = {})
       @gateway = attributes[:gateway]
