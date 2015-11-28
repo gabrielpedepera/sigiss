@@ -1,28 +1,76 @@
 # Sigiss
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/sigiss`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Build Status](https://travis-ci.org/gabrielpedepera/sigiss.svg?branch=master)](https://travis-ci.org/gabrielpedepera/sigiss) [![Code Climate](https://codeclimate.com/github/gabrielpedepera/sigiss/badges/gpa.svg)](https://codeclimate.com/github/gabrielpedepera/sigiss) [![Test Coverage](https://codeclimate.com/github/gabrielpedepera/sigiss/badges/coverage.svg)](https://codeclimate.com/github/gabrielpedepera/sigiss/coverage)
 
-TODO: Delete this and the text above, and describe your gem
+Ruby GEM para integração com o WebService para NFS-e do SIGISS.
 
-## Installation
+Atualmente suportando as seguintes cidades:
 
-Add this line to your application's Gemfile:
+    Bauru - SP
+    Botucatu - SP
+    Marília - SP
+    Londrina - SP
+    Rio Grande - RS
+
+## Instalação
+
+Adicionar ao Gemfile:
 
 ```ruby
 gem 'sigiss'
 ```
 
-And then execute:
+Executar:
 
     $ bundle
 
-Or install it yourself as:
+Ou instalar como:
 
     $ gem install sigiss
 
-## Usage
+## Uso
 
-TODO: Write usage instructions here
+#### Definir a cidade (gateway) para emissão da Nota Fiscal:
+
+```ruby
+gateway = Sigiss::Gateway.new(:marilia, :test) # Ambiente de teste
+gateway = Sigiss::Gateway.new(:marilia, :production) # Ambiente de Produção
+```
+
+#### Definir os dados referente ao prestador:
+
+```ruby
+provider = Sigiss::Provider.new(params)
+```
+
+#### Definir os dados referente ao tomador:
+
+```ruby
+taker = Sigiss::Taker.new(params)
+```
+
+### APIs
+
+#### Emissão
+```ruby
+invoice = Sigiss::Invoice.new(gateway: gateway, provider: provider, taker: taker)
+invoice.build(issue: params)
+invoice.issue!
+```
+
+#### Consulta
+```ruby
+invoice = Sigiss::Invoice.new(gateway: gateway, provider: provider)
+invoice.build(fetch: params)
+invoice.fetch!
+```
+
+#### Cancelamento
+```ruby
+invoice = Sigiss::Invoice.new(gateway: gateway, provider: provider)
+invoice.build(cancel: params)
+invoice.cancel!
+```
 
 ## Development
 
