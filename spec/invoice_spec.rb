@@ -26,10 +26,10 @@ describe Sigiss::Invoice do
         expect(@invoice.data_issue).to eq(issue_request)
       end
 
-      it 'has success' do
+      it 'has success?' do
         VCR.use_cassette('issue') do
           @invoice.issue!
-          expect(@invoice.success).to be_truthy
+          expect(@invoice.success?).to be_truthy
         end
       end
 
@@ -50,10 +50,10 @@ describe Sigiss::Invoice do
         expect(@invoice.data_fetch).to eq(fetch_request)
       end
 
-      it 'has success' do
+      it 'has success?' do
         VCR.use_cassette('fetch') do
           @invoice.fetch!
-          expect(@invoice.success).to be_truthy
+          expect(@invoice.success?).to be_truthy
         end
       end
 
@@ -74,10 +74,10 @@ describe Sigiss::Invoice do
         expect(@invoice.data_cancel).to eq(cancel_request)
       end
 
-      it 'has success' do
+      it 'has success?' do
         VCR.use_cassette('cancel') do
           @invoice.cancel!
-          expect(@invoice.success).to be_truthy
+          expect(@invoice.success?).to be_truthy
         end
       end
 

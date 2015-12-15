@@ -30,5 +30,9 @@ module Sigiss
       end
     end
 
+    def success?
+      @success
+    end
+
   end
 end
