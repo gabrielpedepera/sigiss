@@ -26,17 +26,17 @@ describe Sigiss::Invoice do
         expect(@invoice.data_issue).to eq(issue_request)
       end
 
-      it 'has response success' do
+      it 'has success' do
         VCR.use_cassette('issue') do
-          response = @invoice.issue!
-          expect(response).to have_key(:success)
+          @invoice.issue!
+          expect(@invoice.success).to be_truthy
         end
       end
 
-      it 'has response body' do
+      it 'has response' do
         VCR.use_cassette('issue') do
-          response = @invoice.issue!
-          expect(response).to have_key(:body)
+          @invoice.issue!
+          expect(@invoice.response).to_not be_empty
         end
       end
     end
@@ -50,17 +50,17 @@ describe Sigiss::Invoice do
         expect(@invoice.data_fetch).to eq(fetch_request)
       end
 
-      it 'has response success' do
+      it 'has success' do
         VCR.use_cassette('fetch') do
-          response = @invoice.fetch!
-          expect(response).to have_key(:success)
+          @invoice.fetch!
+          expect(@invoice.success).to be_truthy
         end
       end
 
-      it 'has response body' do
+      it 'has response' do
         VCR.use_cassette('fetch') do
-          response = @invoice.fetch!
-          expect(response).to have_key(:body)
+          @invoice.fetch!
+          expect(@invoice.response).to_not be_empty
         end
       end
     end
@@ -74,17 +74,17 @@ describe Sigiss::Invoice do
         expect(@invoice.data_cancel).to eq(cancel_request)
       end
 
-      it 'has response success' do
+      it 'has success' do
         VCR.use_cassette('cancel') do
-          response = @invoice.cancel!
-          expect(response).to have_key(:success)
+          @invoice.cancel!
+          expect(@invoice.success).to be_truthy
         end
       end
 
-      it 'has response body' do
+      it 'has response' do
         VCR.use_cassette('cancel') do
-          response = @invoice.cancel!
-          expect(response).to have_key(:body)
+          @invoice.cancel!
+          expect(@invoice.response).to_not be_empty
         end
       end
     end

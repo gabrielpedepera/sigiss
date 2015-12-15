@@ -5,14 +5,16 @@ module Sigiss
     include ActiveModel::Validations
     include Sigiss::Integration
 
-    attr_accessor :gateway, :provider, :taker, :data
+    attr_accessor :gateway, :provider, :taker, :data, :success, :response
 
-    validates_presence_of :gateway, :provider, :taker, :data
+    validates_presence_of :gateway, :provider, :taker, :data, :success, :response
 
     def initialize(attributes = {})
       @gateway = attributes[:gateway]
       @provider = attributes[:provider]
       @taker = attributes[:taker]
+      @success = false
+      @response = {}
     end
 
     def build(method, params = {})

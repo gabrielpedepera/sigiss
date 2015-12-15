@@ -30,20 +30,20 @@ module Sigiss
 
     def send(action, data)
       execute do
-        client = Savon.client(wsdl: gateway.url, convert_request_keys_to: :none)
+        client = Savon.client(wsdl: gateway.url, convert_request_keys_to: :none, log: false)
         response = client.call(action, message: data)
-        { success: true, body: response.body }
+        @success, @response = true, response.body
       end
     end
 
     def execute(&block)
       yield
     rescue Timeout::Error => e
-      { success: false, body: { error: e.message } }
+      @success, @response = false, { error: e.message }
     rescue Savon::SOAPFault => e
-      { success: false, body: { error: e.message } }
+      @success, @response = false, { error: e.message }
     rescue Exception => e
-      { success: false, body: { error: e.message } }
+      @success, @response = false, { error: e.message }
     end
   end
 
