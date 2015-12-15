@@ -103,6 +103,16 @@ invoice.build(issue: params)
 invoice.issue!
 ```
 
+```ruby
+invoice.success?
+=> true
+```
+
+```ruby
+invoice.response
+=> {:gerar_nota_response=>{:retorno_nota=>{:resultado=>"0", :nota=>"0", :link_impressao=>{:"@xsi:type"=>"xsd:string"}, :"@xsi:type"=>"tns:tcRetornoNota"}, :descricao_erros=>{:item=>{:id=>"0", :descricao_processo=>"Processo Geral", :descricao_erro=>"Senha não pode ser verificada", :"@xsi:type"=>"tns:tcEstruturaDescricaoErros"}, :"@xsi:type"=>"SOAP-ENC:Array", :"@soap_enc:array_type"=>"tns:tcEstruturaDescricaoErros[1]"}, :"@xmlns:ns1"=>"urn:sigiss_ws"}}
+```
+
 #### Consulta
 ```ruby
 invoice = Sigiss::Invoice.new(gateway: gateway, provider: provider)
@@ -116,6 +126,16 @@ invoice.build(fetch: params)
 invoice.fetch!
 ```
 
+```ruby
+invoice.success?
+=> true
+```
+
+```ruby
+invoice.response
+=> {:consultar_nota_valida_response=>{:retorno_nota=>{:resultado=>"0", :nota=>"0", :link_impressao=>{:"@xsi:type"=>"xsd:string"}, :"@xsi:type"=>"tns:tcRetornoNota"}, :descricao_erros=>{:item=>{:id=>"0", :descricao_processo=>"Processo Geral", :descricao_erro=>"Valor da nota precisa ser informada.", :"@xsi:type"=>"tns:tcEstruturaDescricaoErros"}, :"@xsi:type"=>"SOAP-ENC:Array", :"@soap_enc:array_type"=>"tns:tcEstruturaDescricaoErros[1]"}, :"@xmlns:ns1"=>"urn:sigiss_ws"}}
+```
+
 #### Cancelamento
 ```ruby
 invoice = Sigiss::Invoice.new(gateway: gateway, provider: provider)
@@ -126,6 +146,16 @@ params = {
 }
 invoice.build(cancel: params)
 invoice.cancel!
+```
+
+```ruby
+invoice.success?
+=> true
+```
+
+```ruby
+invoice.response
+=> {:cancelar_nota_response=>{:retorno_nota=>{:resultado=>"0", :nota=>"0", :link_impressao=>{:"@xsi:type"=>"xsd:string"}, :"@xsi:type"=>"tns:tcRetornoNota"}, :descricao_erros=>{:item=>{:id=>"0", :descricao_processo=>"Processo Geral", :descricao_erro=>"Dados de identificação não encontrados.", :"@xsi:type"=>"tns:tcEstruturaDescricaoErros"}, :"@xsi:type"=>"SOAP-ENC:Array", :"@soap_enc:array_type"=>"tns:tcEstruturaDescricaoErros[1]"}, :"@xmlns:ns1"=>"urn:sigiss_ws"}}
 ```
 
 ## Contribuição
