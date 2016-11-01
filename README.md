@@ -9,7 +9,7 @@ Atualmente suportando as seguintes cidades:
     - Bauru - SP
     - Botucatu - SP
     - Marília - SP
-    - Londrina - SP
+    - Londrina - PR
     - Rio Grande - RS
 
 Obs.: A gem foi desenvolvida baseada no WebService de [Marília-SP](https://marilia.sigiss.com.br/marilia/ws/sigiss_ws.php) e [Manual]( http://www.bauru.sp.gov.br/arquivos/arquivos_site/sec_financas/nfse_manual_webservice.pdf).
